@@ -1,0 +1,18 @@
+#root {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes typing {
+  from {
+    white-space: nowrap;
+    width: 0;
+  }
+
+  to {
+    white-space: nowrap;
+    width: 100%;
+  }
+}

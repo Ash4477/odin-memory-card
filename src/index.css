@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@font-face {
+  font-family: pokeFont;
+  src: url("src/assets/PokemonGB.ttf") format("truetype");
+}
+
+body {
+  background: url("src/assets/pokemon-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Press Start 2P";
+  height: 100vh;
+}
