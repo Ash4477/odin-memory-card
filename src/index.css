@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: pokeFont;
-  src: url("src/assets/PokemonGB.ttf") format("truetype");
+  src: url("/src/assets/PokemonGB.ttf") format("truetype");
 }
 
 body {
   background: url("src/assets/pokemon-bg.png") no-repeat center center fixed;
   background-size: cover;
   font-family: "Press Start 2P";
-  height: 100vh;
+  min-height: 100vh;
 }

@@ -6,17 +6,36 @@ import GameBox from "./components/GameBox";
 
 function App() {
   const [isGameOn, setIsGameOn] = useState(false);
-  let gameLevel = "";
+  const [totalCards, setTotalCards] = useState(4);
 
   const getDifficultyLevel = (level) => {
     setIsGameOn(true);
-    gameLevel = level;
+    switch (level) {
+      case "EASY":
+        setTotalCards(4);
+        break;
+      case "MEDIUM":
+        setTotalCards(7);
+        break;
+      case "HARD":
+        setTotalCards(10);
+        break;
+      default:
+        break;
+    }
   };
 
-  if (isGameOn) return <GameBox level={gameLevel} />;
-  else {
-    return <StartBox getDifficultyLevel={getDifficultyLevel} />;
-  }
+  const returnMenu = () => setIsGameOn(false);
+
+  return (
+    <>
+      {isGameOn ? (
+        <GameBox totalCards={totalCards} returnMenu={returnMenu} />
+      ) : (
+        <StartBox getDifficultyLevel={getDifficultyLevel} />
+      )}
+    </>
+  );
 }
 
 export default App;
