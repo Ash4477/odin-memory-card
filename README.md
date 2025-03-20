@@ -1,8 +1,44 @@
-# Pokemon Memory Game
+# 🌟 Pokémon Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **Pokémon Memory Game** built with **React and Vite** as part of The Odin Project. The goal is to **select unique Pokémon** without clicking the same one twice! 🎮
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Installation & Run
+
+```sh
+git clone https://github.com/yourusername/pokemon-memory-game.git
+cd pokemon-memory-game
+npm install
+npm run dev
+```
+
+---
+
+## 🛠 Tech Stack
+
+- **React (Vite)**
+- **CSS**
+- **PokéAPI (for Pokémon images)**
+
+---
+
+## 🏆 Features
+
+✅ Click unique Pokémon without repeating  
+✅ Score increases for correct picks  
+✅ Randomized Pokémon cards after each turn  
+✅ Game resets on duplicate click
+
+---
+
+## 📸 Preview
+
+![Game Screenshot](/public/game_ss.png)
+
+---
+
+## 📢 Inspiration & Credits
+
+This project was **inspired by** [Sharkri's Pokememo](https://github.com/Sharkri/pokememo) 🎉.  
+Pokémon images & data from [PokéAPI](https://pokeapi.co/).
