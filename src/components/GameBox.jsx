@@ -70,7 +70,7 @@ const GameBox = ({ totalCards, returnMenu }) => {
       ignore = true;
       controller.abort();
     };
-  }, []);
+  }, [totalCards]);
 
   const isGameOver = cardCount.current + 1 >= cardCount.total;
 
