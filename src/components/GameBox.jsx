@@ -16,50 +16,27 @@ const GameBox = ({ totalCards, returnMenu }) => {
 
     const fetchPokemonData = async () => {
       try {
-        const url = `https://pokeapi.co/api/v2/pokemon?offset=${totalCards}&limit=${totalCards}`;
+        const url = `http://localhost:8080/?limit=${totalCards}`;
         const response = await fetch(url, {
           mode: "cors",
           signal: controller.signal,
         });
         if (!ignore) {
           const data = await response.json();
-          const pokeList = await Promise.all(
-            data.results.map(async (data) => {
-              const pokeId = Number(
-                data["url"].split("/").filter(Boolean).pop()
-              );
-              const pokeImageUrl = await fetchPokemonImage(pokeId);
-              return {
-                pokeId: pokeId,
-                pokeName: data["name"],
-                pokeImageUrl,
-                clicked: false,
-              };
-            })
-          );
+          const pokeList = data.map((data, index) => {
+            return {
+              pokeId: index,
+              pokeName: data.pokeName,
+              pokeImageUrl: data.pokeImageUrl,
+              clicked: false,
+            };
+          });
+
           setPokemonList(pokeList);
           setIsLoading(false);
         }
       } catch (error) {
         if (error.name !== "AbortError") {
-          console.log("fetch error: ", error);
-        }
-      }
-    };
-
-    const fetchPokemonImage = async (pokemonId) => {
-      try {
-        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
-        const response = await fetch(url, {
-          mode: "cors",
-          signal: controller.signal,
-        });
-        if (!ignore) {
-          const data = await response.json();
-          return data.sprites["front_default"];
-        }
-      } catch (error) {
-        if (error !== "AbortError") {
           console.log("fetch error: ", error);
         }
       }
