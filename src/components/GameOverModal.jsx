@@ -17,9 +17,7 @@ const GameOverModal = ({
 
     const fetchGIF = async () => {
       try {
-        const url = `https://api.giphy.com/v1/gifs/search?api_key=${
-          import.meta.env.VITE_GIPHY_API_KEY
-        }&q=${
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=R8W7zlVPaABPJARkY0G3z543Ue2Apd4g&q=${
           isGameOver ? "happy+pokemon" : "sad+pokemon"
         }&limit=1&offset=1&rating=g&lang=en&bundle=messaging_non_clips`;
         const response = await fetch(url, {
