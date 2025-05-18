@@ -7,6 +7,7 @@ RUN npm install
 
 COPY . .
 RUN npm run build
+RUN ls -la /app/dist
 
 # Serve with NGINX
 FROM nginx:alpine
